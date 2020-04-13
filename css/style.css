@@ -1,0 +1,23 @@
+.b-menu__item {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.b-slide {
+  width: 100%;
+}
+.b-slide__header {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bolder;
+}
+.main-page {
+  background-color: #ffffff;
+  margin: 0px;
+}
+.main-page__header {
+  background: url(../images/bg-header.png) no-repeat center center;
+}
