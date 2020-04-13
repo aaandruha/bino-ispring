@@ -9,9 +9,6 @@
         "type": "shell",
         "command": "lessc css/style.less css/style.css",
         "group": "build"
-      }, 
-      {
-
       }
     ]
   }
