@@ -7,7 +7,7 @@
       {
         "label": "Less Compile",
         "type": "shell",
-        "command": "lessc style.less style.css",
+        "command": "lessc css/style.less css/style.css",
         "group": "build"
       }, 
       {
