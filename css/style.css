@@ -1,23 +1,207 @@
+.b-anchore__img {
+  text-align: center;
+}
+.b-menu__list {
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden;
+}
 .b-menu__item {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 0.8rem;
   text-transform: uppercase;
   color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.b-menu__link {
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 20px 0px;
+  margin: 0 30px;
+}
+.b-menu__link_active {
+  color: #e84c3d;
+  border-bottom: 1px solid #e84c3d;
+}
+.b-menu__navicon {
+  background: #ffffff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+.b-menu__navicon:before {
+  background: #ffffff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: 5px;
+}
+.b-menu__navicon:after {
+  background: #ffffff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: -5px;
+}
+.b-menu__btn {
+  display: none;
+}
+.b-menu__btn:checked .b-menu__list {
+  max-height: 240px;
+  background-color: #999999;
+}
+.b-menu__btn:checked ~ .b-menu__icon .b-menu__navicon {
+  background: transparent;
+}
+.b-menu__btn:checked ~ .b-menu__icon .b-menu__navicon:before {
+  transform: rotate(-45deg);
+}
+.b-menu__btn:checked ~ .b-menu__icon .b-menu__navicon:after {
+  transform: rotate(45deg);
+}
+.b-menu__btn:checked ~ .b-menu__icon:not(.steps) .b-menu__navicon:before {
+  top: 0;
+}
+.b-menu__btn:checked ~ .b-menu__icon:not(.steps) .b-menu__navicon:after {
+  top: 0;
+}
+.b-menu__icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+/* 48em = 768px */
+@media (min-width: 62em) {
+  .b-menu {
+    /*&__item {
+      float: left;
+    }
+    &__link {
+      padding: 20px 30px;
+    }*/
+  }
+  .b-menu__icon {
+    display: none;
+  }
+  .b-menu__list {
+    /*clear: none;
+      float: right;*/
+    max-height: none;
+  }
+}
+.b-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .b-slide {
   width: 100%;
+  text-align: center;
+}
+.b-slide__buttons {
+  margin: 68px 160px;
 }
 .b-slide__header {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 2rem;
+  font-size: 5.3rem;
   text-transform: uppercase;
   color: #ffffff;
-  font-weight: bolder;
+  font-weight: bold;
+  margin: 13px 0;
+  letter-spacing: 0.57rem;
+}
+.b-slide__slogan {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+  letter-spacing: 0.12rem;
+  font-weight: lighter;
+}
+.b-slide__text {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 30px;
+}
+.b-slider {
+  margin: 7rem auto;
+}
+.b-slider-list__item {
+  list-style-type: none;
+}
+.b-button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  letter-spacing: 0.1rem;
+  border-radius: 4px;
+  margin: 10px;
+  min-width: 9rem;
+  cursor: pointer;
+}
+.b-buttons-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.button_primary_color_red {
+  background-color: #e84c3d;
+  border: 1px solid #e84c3d;
+  box-shadow: 0px 2px 4.75px 0.25px rgba(0, 0, 0, 0.25);
+}
+.button_secondary_color_transperent {
+  border: 1px solid #ffffff;
 }
 .main-page {
+  background: url(../images/bg-header.png) no-repeat center 0;
   background-color: #ffffff;
-  margin: 0px;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.main-page__footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  width: 100%;
+  max-width: 1200px;
 }
 .main-page__header {
-  background: url(../images/bg-header.png) no-repeat center center;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  width: 100%;
+  max-width: 1260px;
+  justify-content: space-around;
+  padding: 21px;
+}
+.main-page__line {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  width: 100%;
+  max-width: 1200px;
 }
