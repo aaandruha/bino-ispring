@@ -2,6 +2,7 @@
 @secondary: #666666;
 @text-color-primary: #999999;
 @text-color-secondary: #ffffff;
+@bg-color: #202020;
 @radius: 4px;
 @header-font: 'Source Sans Pro', sans-serif;
 @paragraph-font: 'Open Sans', sans-serif;
@@ -82,9 +83,9 @@
   &__btn {
     display: none;
   }
-  &__btn:checked  &__list {
-    max-height: 240px;
-    background-color: @text-color-primary;
+  &__btn:checked  ~ &__list {
+    max-height: 440px;
+    background-color: @bg-color;
   }
 
   &__btn:checked ~ &__icon &__navicon {
@@ -124,18 +125,14 @@
     &__icon {
       display: none;
     }
-    /*&__item {
-      float: left;
-    }
-    &__link {
-      padding: 20px 30px;
-    }*/
     &__list {
-      /*clear: none;
-      float: right;*/
       max-height: none;
     }
-
+  }
+  @media (max-width: 62em) {
+    &__item {
+      width: 100%;
+    }
   }
 }
 
@@ -144,9 +141,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &__logo {
-  }
-  &__menu {
+
+  @media (max-width: 62em) {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    padding: unset;
+    height: 75px;
+    &__logo {
+    }
+    &__menu {
+      position: absolute;
+      display: table;
+      width: 90%;
+    } 
   }
 }
 .b-slide {
@@ -180,11 +188,15 @@
     color: @text-color-secondary;
     font-size: 1rem;
     font-family: @paragraph-font;
-    margin-top: 30px;
+    margin: 30px auto;
+    width: 60%;
+    height: 67px;
+    overflow: hidden;
   }
 }
 .b-slider {
-  margin: 7rem auto;
+  margin: 120px auto;
+  height: 600px;
   &__controls {
   }
   &__next {
