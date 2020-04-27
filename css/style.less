@@ -3,6 +3,7 @@
 @text-color-primary: #999999;
 @text-color-secondary: #ffffff;
 @bg-color: #202020;
+@service-text-color: #797979;
 @radius: 4px;
 @header-font: 'Source Sans Pro', sans-serif;
 @paragraph-font: 'Open Sans', sans-serif;
@@ -141,6 +142,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1260px;
+  margin: 0 auto;
 
   @media (max-width: 62em) {
     width: 100%;
@@ -195,7 +198,7 @@
   }
 }
 .b-slider {
-  margin: 120px auto;
+  margin: 154px auto 196px;
   height: 600px;
   &__controls {
   }
@@ -231,6 +234,7 @@
 }
 
 .b-slide {
+  padding: 165px 0px;
   &__buttons {
   }
 }
@@ -244,37 +248,186 @@
 }
 
 
+.feature {
+  &__icon {
+    text-align: center;
+    margin: 0 auto 25px;                
+    border: 1px solid #E5E5E5;
+    max-width: 70px;
+    transition: all 0.8s;
+  }
+  &__notrotate{
+    transition: all 0.8s;
+  }
+  &__header {
+    text-transform: uppercase;  
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0 0 30px 0;
+    font-family: @header-font;
+    text-align: center;
+    color: @secondary;
+    position: relative;
+    padding: 0 0 30px 0;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 50px;
+      bottom: 0;
+      height: 1px;
+      background-color: @secondary;
+      margin: 0 0 0 -25px;
+      left: 50%;
+    }
+  }
+  &__text {
+    text-align: justify;
+    text-align-last: center;
+    font-family: @paragraph-font;
+    font-size: .8rem;
+    color: @text-color-primary;
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+  }
+  &:hover &__icon {
+    border-color: @primary;
+    transform: rotate(45deg);
+  }
+  &:hover &__header {
+    color: @primary;
+  }
+  &:hover &__notrotate {
+    transform: rotate(-45deg);
+  }
+
+}
+
+.features {
+  &__item {
+    padding: 15px;
+    max-width: 250px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1260px;
+    margin: 90px auto;
+    flex-wrap: wrap;
+  }    
+}
+
+
+.service {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  &__description {
+    margin: 30px 0;
+  }
+  &__text {
+    color:@service-text-color;
+    font-family: @paragraph-font;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+  &__title {
+    margin: 7px 0;
+  }
+  &__icon {
+    float: right;
+    margin-right: -38px;
+  }
+}
+
+.services {
+  background: @bg-color;  
+  max-height: 768px;
+  &__container {
+    display: flex;
+    max-width: 1260px;
+    margin: 90px auto;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  &__description {
+    position: inherit;
+    margin: auto 0;
+    max-width: 750px;
+  }
+  &__header {
+    margin: 30px 0;
+    padding-right: 126px;
+  }
+  &__items {
+    margin-right: 50px;
+  }
+
+  &__img {
+    max-width: 510px;
+    margin-left: -50px;
+  }
+}
+
+
+.subtitle {
+  text-transform: uppercase;
+  font-family: @header-font;
+  font-size: 1.4rem;
+  line-height: 1rem;
+  &_red {
+    color: @primary;
+  }
+}
+.title {
+  font-family: @header-font;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.55rem;
+  text-transform: uppercase;
+  &_white {
+    color: @text-color-secondary;
+    border-right: 6px solid @primary;
+  }
+  &_right {
+    text-align: right;
+    padding-right: 40px;
+  }
+}
+
+
+
+
+
 .main-page 
 {
     background: url(../images/bg-header.png) no-repeat center 0;
     background-color: @text-color-secondary;
     margin: 0;
-    display: flex;
-    justify-content: space-around;
+
   &__footer {
-    display: flex;
-    flex-direction: column;
+    display: block;
     min-height: 600px;
     width: 100%;
     max-width: 1200px;
+    min-width: 350px;
   }
   &__header 
   {
-    display: flex;
-    flex-direction: column;
-    min-height: 600px;
+    display: block;
     width: 100%;
-    max-width: 1260px;
-    justify-content: space-around;
-    padding: 21px;
+    position: fixed;
+    top: 0px;
+    min-width: 350px;
+    z-index: 99999;
 }
   &__line 
   {
-    display: flex;
-    flex-direction: column;
-    min-height: 600px;
+    display: block;
     width: 100%;
-    max-width: 1200px;
+    min-height: 350px;
+    min-width: 350px;
   }
 }
 
