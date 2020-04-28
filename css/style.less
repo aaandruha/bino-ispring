@@ -3,7 +3,10 @@
 @text-color-primary: #999999;
 @text-color-secondary: #ffffff;
 @bg-color: #202020;
+@bg-color-contact: #f4f5f9;
 @service-text-color: #797979;
+@text-color-title: #6a6a6a;
+@input-border-color: #e6e6e6;
 @radius: 4px;
 @header-font: 'Source Sans Pro', sans-serif;
 @paragraph-font: 'Open Sans', sans-serif;
@@ -149,20 +152,28 @@
     width: 100%;
     flex-direction: column;
     display: flex;
+    justify-content: center;
     padding: unset;
-    height: 75px;
+    height: 93px;
     &__logo {
     }
     &__menu {
       position: absolute;
       display: table;
       width: 90%;
+      top: 24px;
     } 
   }
 }
 .b-slide {
     width: 100%;
     text-align: center;
+    @media (max-width: 62em) {  
+      padding-top: 50px !important;
+      &__header {
+        font-size: 2.2rem !important;
+      } 
+    }
   &__buttons {
     margin: 68px 160px;
   }
@@ -198,7 +209,7 @@
   }
 }
 .b-slider {
-  margin: 154px auto 196px;
+  margin: 135px auto 120px;;
   height: 600px;
   &__controls {
   }
@@ -343,11 +354,22 @@
 
 .services {
   background: @bg-color;  
-  max-height: 768px;
+  max-height: 800px;
+  @media (max-width: 1210px) {
+    &__img {
+      margin-left: unset !important;
+      width: 100% !important;
+      max-width: unset !important;
+    }
+    &__img img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   &__container {
     display: flex;
     max-width: 1260px;
-    margin: 90px auto;
+    margin: 90px auto 0px;
     position: relative;
     flex-wrap: wrap;
   }
@@ -368,6 +390,9 @@
     max-width: 510px;
     margin-left: -50px;
   }
+  &__img img{
+      height: 100%;
+  }
 }
 
 
@@ -380,11 +405,12 @@
     color: @primary;
   }
 }
+
 .title {
   font-family: @header-font;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  letter-spacing: 0.55rem;
+  letter-spacing: 0.15rem;
   text-transform: uppercase;
   &_white {
     color: @text-color-secondary;
@@ -394,8 +420,128 @@
     text-align: right;
     padding-right: 40px;
   }
+  &_center {
+    text-align: center;
+  }
+  &_grey {
+    color: @text-color-title;
+  }
 }
 
+.contact-form {
+  &__error {
+  }
+  &__row {
+    border-bottom: 0.5px solid @input-border-color;
+    height: 55px;
+    margin: 20px 10px;
+  }
+  &__row {
+    margin-top: 0;
+  }
+  &__row input {
+    border: unset;
+    font-size: 1rem;
+    font-weight: normal;
+    color: @text-color-primary;    
+    font-family: @paragraph-font;
+  }
+  &__row textarea {
+    border: unset;
+    font-size: 1rem;
+    font-weight: normal;
+    color: @text-color-primary;    
+    width: 100%;
+    height: 114px;
+    font-family: @paragraph-font;
+  }
+  &__row_textarea {
+    height: 120px;
+
+  }
+}
+
+.contact_form {
+  &__button {
+  }
+}
+.contacts {
+  background-color: @bg-color-contact;
+
+  &__container {
+    max-width: 1260px;
+    margin: 0px auto;
+    padding: 120px 0;
+  }
+  &__header {
+    margin: 50px 0;
+  }
+  &__description {
+    font-family: @header-font;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: @text-color-primary;
+    font-weight: lighter;
+  }
+  &__form {
+    width: 100%;
+    padding: 90px;
+    border-radius: 3px;
+    background-color: @text-color-secondary;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    min-height: 400px;
+  }
+  &__info {
+    min-width: 300px;
+    padding: 90px;
+    border-radius: 3px;
+    background-color: @text-color-secondary;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    min-height: 400px;
+    margin-bottom: 50px;
+  }
+  &__item {    
+    margin: 55px 0;
+  }
+  &__item:first-child {    
+    margin-top: 0;
+  }
+  &__item:last-child {    
+    margin-bottom: 0;
+  }
+
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+}
+.separator {
+  width: 100%;
+  text-align: center;
+}
+
+.title-text {
+  font-size: 1rem;
+  font-family: @paragraph-font;
+  margin: 15px auto;
+  width: 60%;
+  overflow: hidden;
+  &_grey {
+    color: @text-color-primary;
+  }
+}
 
 
 
@@ -417,7 +563,6 @@
   {
     display: block;
     width: 100%;
-    position: fixed;
     top: 0px;
     min-width: 350px;
     z-index: 99999;
