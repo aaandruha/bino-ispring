@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bino Short iSpring</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="main-page">
@@ -172,11 +173,11 @@
                     </div>
                     <div class="contacts__form">
                         <form action="" method="post" class="contact-form">
-                            <div class="contact-form__error"></div>
                             <div class="contact-form__row"><input type="text" name="name" placeholder="Name"></div>
                             <div class="contact-form__row"><input type="text" name="email" placeholder="Email"></div>
                             <div class="contact-form__row"><input type="text" name="subject" placeholder="Subject"></div>
-                            <div class="contact-form__row contact-form__row_textarea"><textarea type="text" name="message" placeholder="Message"></textarea></div>
+                            <div class="contact-form__row contact-form__row_textarea contact-form__row_error"><textarea type="text" name="message" placeholder="Message"></textarea></div>
+                            <div class="contact-form__error">Не заполнены поля</div>
                             <div class="contact_form__button"><button value="" class="b-button button_primary_color_red" js-send="">send message</button></div>
                         </form>
                     </div>
@@ -185,10 +186,30 @@
         </div>
 
     </div>
-    <!--div class="main-page__line"></div>
+    <div class="main-page__line">
+        <div class="free-trial">
+            <div class="free-trial__header">Let's Get Started Now. <b>It's FREE!</b></div>
+            <div class="free-trial__description">30 day free trial. Free plan allows up to 2 projects. Pay if you need more. Cancel anytime. No catches.</div>
+            <div class="free-trial__button"><button value="" class="b-button button_primary_color_red" js-send="">start free trial</button></div>
+        </div>
+    </div>
     <div class="main-page__footer">
-
-    </div-->
+        <div class="b-footer">
+            <div class="b-footer__social">
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></div>
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></div>
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fas fa-rss"></i></a></div>
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fab fa-google-plus-g"></i></a></div>
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a></div>
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fab fa-skype"></i></a></div>
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fab fa-vimeo-v"></i></a></div>
+                <div class="b-footer__item"><a href="#" class="social-link"><i class="fab fa-tumblr"></i></a></div>
+            </div>
+            <div class="b-footer__copyright">
+                Kazi Erfan © All Rights Reserved 
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
