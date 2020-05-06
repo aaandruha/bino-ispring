@@ -173,12 +173,11 @@
                     </div>
                     <div class="contacts__form">
                         <form action="" method="post" class="contact-form">
-                            <div class="contact-form__row"><input type="text" name="name" placeholder="Name"></div>
-                            <div class="contact-form__row"><input type="text" name="email" placeholder="Email"></div>
-                            <div class="contact-form__row"><input type="text" name="subject" placeholder="Subject"></div>
-                            <div class="contact-form__row contact-form__row_textarea contact-form__row_error"><textarea type="text" name="message" placeholder="Message"></textarea></div>
-                            <div class="contact-form__error">Не заполнены поля</div>
-                            <div class="contact_form__button"><button value="" class="b-button button_primary_color_red" js-send="">send message</button></div>
+                            <div class="contact-form__row"><input type="text" name="name" placeholder="Name*" id="name" required minlength="1"></div>
+                            <div class="contact-form__row"><input type="email" name="email" placeholder="Email*" id="email" required pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" title="The domain portion of the email address is invalid (the portion after the @)"></div>
+                            <div class="contact-form__row"><input type="text" name="subject" placeholder="Subject*" id="subject" required minlength="1"></div>
+                            <div class="contact-form__row contact-form__row_textarea"><textarea type="text" name="message" placeholder="Message*" id="message" required minlength="1"></textarea></div>
+                            <div class="contact_form__button"><button value="" class="b-button button_primary_color_red" type="submit">send message</button></div>
                         </form>
                     </div>
                 </div>
@@ -210,6 +209,12 @@
             </div>
         </div>
     </div>
+    <div class="scroll-to-top" onclick="topFunction();"> 
+        <a  js-scroll-to-top=""  title="Go to top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
