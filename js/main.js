@@ -1,11 +1,14 @@
 mybutton = document.querySelector('.scroll-to-top');
+mymenu = document.querySelector('.main-page__header');
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
     mybutton.style.display = "block";
+    mymenu.style.background = 'rgba(106, 106, 106, .85)';
   } else {
     mybutton.style.display = "none";
+    mymenu.style.background = 'unset';
   }
 }
 
