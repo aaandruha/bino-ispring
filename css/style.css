@@ -621,8 +621,8 @@
   display: none;
 }
 .separator {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   margin: 20px auto;
   background: #e84c3d;
   position: relative;
