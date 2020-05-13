@@ -11,15 +11,58 @@
 @header-font: 'Source Sans Pro', sans-serif;
 @paragraph-font: 'Open Sans', sans-serif;
 
-.b-anchor {
-}
-.b-anchore {
-  &__img {
-    text-align: center;
+.main-page 
+{
+    margin: 0;
+    overflow-x: hidden;
+  &__footer {
+    display: block;
+    min-height: 600px;
+    width: 100%;
+    background-color: @bg-color;
+    min-height: 90px;
   }
+  &__header 
+  {
+    display: block;
+    width: 100%;
+    top: 0px;
+    min-width: 350px;
+    z-index: 699;
+    position: fixed;
+    transition: background-color .5s;
 }
-
-
+  &__line 
+  {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    min-width: 350px;
+  }
+  &_skew_border {
+    &:before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: "";
+      width: 0;
+      height: 0;
+      border-bottom: 86px solid #fff;
+      border-left: 960px solid transparent;
+    }
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      width: 0;
+      height: 0;
+      border-bottom: 86px solid #fff;
+      border-right: 960px solid transparent;
+    }
+  }
+  
+}
 
 .b-menu{
   &__list{
@@ -124,49 +167,13 @@
   }
 }
 
-
-
-.b-menu{
-  @media (min-width: 62em) {
-    &__icon {
-      display: none;
-    }
-    &__list {
-      max-height: none;
-    }
-  }
-  @media (max-width: 62em) {
-    &__item {
-      width: 100%;
-    }
-  }
-}
-
-
 .b-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1260px;
+  max-width: 1180px;
   margin: 0 auto;
 
-  @media (max-width: 62em) {
-    width: 100%;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    padding: unset;
-    height: 93px;
-    &__logo {
-    }
-    &__menu {
-      position: absolute;
-      display: table;
-      width: 90%;
-      top: 24px;
-      z-index: 99999;
-    } 
-  }
 }
 
 .b-slide {
@@ -175,12 +182,6 @@
     text-align: center;
     background: url(../images/bg-header.png) no-repeat center 0;
     background-color: @text-color-secondary;
-
-    @media (max-width: 62em) {  
-      &__header {
-        font-size: 2.2rem !important;
-      } 
-    }
   &__buttons {
     margin: 68px 160px;
   }
@@ -230,11 +231,11 @@
     background: @text-color-primary;
     float: right;
     position: absolute;
-    z-index: 999;
-    top: 400px;
+    z-index: 299;
+    top: 420px;
     font-size: 1.5rem;
     transition: all 0.6s;
-    right: 25px;
+    right: 45px;
     opacity: .5;
     border-radius: 2px;
     cursor: pointer;
@@ -260,11 +261,11 @@
     background: @text-color-primary;
     float: left;
     position: absolute;
-    z-index: 999;
-    top: 400px;
+    z-index: 299;
+    top: 420px;
     font-size: 1.5rem;
     transition: all 0.6s;
-    left: 25px;
+    left: 45px;
     opacity: .5;
     border-radius: 2px;
     cursor: pointer;
@@ -290,18 +291,23 @@
   }
 }
 
+.b-anchor {
+  &__img {
+    text-align: center;
+  }
+}
 
 
 .b-button {
   font-family: @header-font;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   color: @text-color-secondary;
   font-weight: bold;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.2rem;
   letter-spacing: .1rem;
   border-radius: @radius;
-  margin: 10px;
+  margin: 10px 20px;
   min-width: 9rem;
   cursor: pointer;
   &:disabled {
@@ -351,13 +357,13 @@
     text-align: center;
     margin: 0 auto 25px;                
     border: 1px solid #E5E5E5;
-    max-width: 60px;
+    width: 60px;
     transition: all 0.8s;
-    max-height: 60px;
+    height: 60px;
   }
   &__notrotate{
     transition: all 0.8s;
-    width: 60px;
+    margin-top: 15px;
   }
   &__header {
     text-transform: uppercase;  
@@ -413,7 +419,7 @@
     justify-content: space-around;
     align-items: center;
     max-width: 1260px;
-    margin: 90px auto;
+    margin: 90px auto 60px;
     flex-wrap: wrap;
   }    
 }
@@ -444,22 +450,10 @@
 
 .services {
   background: @bg-color;  
-  @media (max-width: 1210px) {
-    &__img {
-      display: none;
-      margin-left: unset !important;
-      width: 100% !important;
-      max-width: unset !important;
-    }
-    &__img img {
-      width: 100%;
-      height: 100%;
-    }
-  }
   &__container {
     display: flex;
     max-width: 1260px;
-    margin: 90px auto 0px;
+    margin: 0px auto 0px;
     position: relative;
     flex-wrap: wrap;
   }
@@ -528,34 +522,32 @@
     margin: 20px 10px;
   }
   &__row {
-    height: 42px;
-    margin: 25px 10px;
+    height: 32px;
+    margin: 15px 10px;
   }
   &__row {
     margin-top: 0;
   }
   &__row input {
     border: unset;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: normal;
     color: @text-color-primary;    
     font-family: @paragraph-font;
     width: 100%;
     border-bottom: 0.5px solid @input-border-color;;
-    padding-bottom: 13px;
-    padding-top: 18px;
+    padding-bottom: 7px;
   }
   &__row textarea {
     border: unset;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: normal;
     color: @text-color-primary;    
     width: 100%;
     height: 114px;
     font-family: @paragraph-font;
     border-bottom: 0.5px solid @input-border-color;;
-    padding-bottom: 13px;
-    padding-top: 18px;
+    padding-bottom: 7px;
     min-height: 110px;
   }
   &__row_textarea {
@@ -569,7 +561,7 @@
 }
 .error-message {
   font-family: @paragraph-font !important;
-  font-size: 0.7rem !important;
+  font-size: 0.65rem !important;
   color: @primary !important;    
 }
 
@@ -619,7 +611,7 @@
     padding: 120px 0;
   }
   &__header {
-    margin: 50px 0;
+    margin: 25px 0;
     text-align: center;
   }
   &__description {
@@ -630,16 +622,17 @@
     font-weight: lighter;
   }
   &__form {
-    padding: 90px;
+    padding: 85px;
     border-radius: 3px;
     background-color: @text-color-secondary;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    min-height: 400px;
+    min-height: 300px;
     margin-bottom: 50px;
     min-width: 300px;
     flex-grow: 1.5;
     position: relative;
+    height: 100%;
   }
   &__info {
     min-width: 300px;
@@ -648,12 +641,13 @@
     background-color: @text-color-secondary;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    min-height: 400px;
+    min-height: 300px;
     margin-bottom: 50px;
     flex-grow: 1;
+    height: 100%;
   }
   &__item {    
-    margin: 55px 0;
+    margin: 16px 0;
   }
   &__item:first-child {    
     margin-top: 0;
@@ -677,16 +671,6 @@
   }
   &__subtitle {
     margin-bottom: 20px;
-  }
-  @media (max-width: 500px) {
-    &__info {
-      min-width: 230px;
-      padding: 30px;
-    }
-    &__form {
-      min-width: 230px;
-      padding: 30px;
-    }
   }
 }
 .hide__name {
@@ -736,7 +720,7 @@
 }
 
 .free-trial {
-  background: url(../images/bg-freetrial.png) center 0 no-repeat;
+  background: url(../images/bg-freetrial.jpg) center 0 no-repeat;
   width: 100%;
   margin: 0 auto;
   height: 480px;
@@ -803,37 +787,6 @@
 }
 
 
-
-.main-page 
-{
-    margin: 0;
-    overflow-x: hidden;
-  &__footer {
-    display: block;
-    min-height: 600px;
-    width: 100%;
-    background-color: @bg-color;
-    min-height: 90px;
-  }
-  &__header 
-  {
-    display: block;
-    width: 100%;
-    top: 0px;
-    min-width: 350px;
-    z-index: 99999;
-    position: fixed;
-    transition: background-color .5s;
-}
-  &__line 
-  {
-    display: block;
-    width: 100%;
-    min-height: 350px;
-    min-width: 350px;
-  }
-}
-
 .scroll-to-top {
   display: none;
   text-align: center;
@@ -862,4 +815,80 @@
   }
 }
 
+.contacts {
+  @media (max-width: 32em) {
+    &__info {
+      min-width: 230px;
+      padding: 30px;
+    }
+    &__form {
+      min-width: 230px;
+      padding: 30px;
+    }
+  }
+}
+
+
+
+
+.b-nav {
+  @media (max-width: 62em) {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding: unset;
+    height: 93px;
+    &__logo {
+    }
+    &__menu {
+      position: absolute;
+      display: table;
+      width: 90%;
+      top: 24px;
+      z-index: 699;
+    } 
+  }
+}
+.b-menu{
+  @media (max-width: 62em) {
+    &__item {
+      width: 100%;
+    }
+  }
+}
+.b-slide {
+  @media (max-width: 62em) {  
+    &__header {
+      font-size: 2.2rem !important;
+    } 
+  }
+}
+
+.services {
+  @media (max-width: 72em) {
+    &__img {
+      display: none;
+      margin-left: unset !important;
+      width: 100% !important;
+      max-width: unset !important;
+    }
+    &__img img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+.b-menu{
+@media (min-width: 62em) {
+  &__icon {
+    display: none;
+  }
+  &__list {
+    max-height: none;
+  }
+}
+}
 
